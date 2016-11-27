@@ -3,7 +3,7 @@ package appliedsoftwareengineeringassignment;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class SaxonSystem {
+public class SaxonSystem implements SaxonSystemInterface{
 
     //// Properties ////
     private ArrayList<Region> regions;

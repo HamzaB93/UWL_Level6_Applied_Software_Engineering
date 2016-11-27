@@ -1,7 +1,6 @@
-
 package appliedsoftwareengineeringassignment;
 
-public class Site {
+public class Site implements SiteInterface{
     //// Properties ////
     private String siteName;
     private int siteVisitors;
