@@ -55,7 +55,7 @@ public class SaxonSystem implements SaxonSystemInterface{
         prioritsedSites.add(siteToAdd);
     }
     
-    // USE CASE - Update the site popularity
+    // USE CASE - Update site popularity
     // Checks date, loops through Sites, gets the siteVisitors,
     // sets a new sitePopularity based on visitors, 
     // Checks if marketting needed, finishes
@@ -86,7 +86,7 @@ public class SaxonSystem implements SaxonSystemInterface{
         }
     }
 
-    // USE CASE - Identify if site needs marketing 
+    // USE CASE - Prioritise site for marketing
     // Site as argument, check siteVisitors, add to martketting
     public void prioritiseSiteForMarketing(Site siteToPrioritise){      
         if(siteToPrioritise.getSiteVisitors() < 5000) {
@@ -100,6 +100,10 @@ public class SaxonSystem implements SaxonSystemInterface{
     // To print out the list of prioritised sites
     public String printPrioritisedSites() {
         return ("Sites that are now priorities\n" + prioritsedSites);
+    }
+    
+    public ArrayList<Site> getPrioritisedSites() {
+        return prioritsedSites;
     }
     
     // To print out the object as string

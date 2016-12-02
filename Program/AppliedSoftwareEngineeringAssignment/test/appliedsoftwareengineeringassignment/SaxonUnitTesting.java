@@ -116,48 +116,30 @@ public class SaxonUnitTesting extends TestCase{
     
     // Testing part of the updateSitePopularity 
     // Testing setPopualrity in different cases
-    public void testChangePopularityByVisitors() {
+    public void testUpdateSitePopularity() {
         // In case of siteTest1, end up as Silver
+        // In case of siteTest2, stays as Bronze
         // In case of siteTest3, end up as Bronze
         
-        //int visitors = siteTest1.getSiteVisitors();
-        int visitors = siteTest3.getSiteVisitors();
-
-        if(visitors < 10000) {
-            siteTest3.setSitePopularity("Bronze");
-        } else if (visitors >= 10000 && visitors <= 30000) {
-            siteTest3.setSitePopularity("Silver");
-        } else if (visitors > 30000) {
-            siteTest3.setSitePopularity("Gold");
-        }
+        String update = saxonTest.updateSitePopularity();
         //assertEquals(siteTest1.getSitePopularity(), "Silver");
+        //asserEquals(siteTest2.getSitePopularity(), "Bronze");
         assertEquals(siteTest3.getSitePopularity(), "Bronze");
     }
     
     // Testing the logic for the prioritise site method
     // Test prioritiseSite to see if the correct site is added to the list
     public void testPrioritiseSite() {
-        boolean added = false;
+        saxonTest.prioritiseSiteForMarketing(siteTest2);
         
-        // Should be false, wont be added
-//        if(siteTest1.getSiteVisitors() < 5000){
-//            saxonTest.addToPriorities(siteTest1);
-//            added = true;
-//        }
+        ArrayList<Site> prioritised = saxonTest.getPrioritisedSites();
         
-        // Should be true, will be added
-        if (siteTest2.getSiteVisitors() < 5000) {
-            saxonTest.addToPriorities(siteTest2);
-            added = true;
+        int j; 
+        for(j = 0 ; j < prioritised.size() ; j++) {
+            j = j + 1;
         }
+        assertEquals(j, 0);
         
-        // Should be true, will be added
-//        if (siteTest3.getSiteVisitors() < 5000) {
-//            saxonTest.addToPriorities(siteTest3);
-//            added = true;
-//        }
-
-        assertTrue(added);
     }
     
 }
