@@ -97,7 +97,6 @@ public class SaxonUnitTesting extends TestCase{
         for (i = 0 ; i < sitesTest.size() ; i++) {
             i = i+1;
         }
-        
         assertTrue(i > 0);
     }
     
@@ -129,8 +128,13 @@ public class SaxonUnitTesting extends TestCase{
     
     // Testing the logic for the prioritise site method
     // Test prioritiseSite to see if the correct site is added to the list
-    public void testPrioritiseSite() {
-        saxonTest.prioritiseSiteForMarketing(siteTest2);
+    public void testPrioritiseSiteForMarketing() {
+        // Site 1 should fail
+        saxonTest.prioritiseSiteForMarketing(siteTest1);
+//        // Site2 should pass
+//        saxonTest.prioritiseSiteForMarketing(siteTest2);
+//        // Site3 should pass
+//        saxonTest.prioritiseSiteForMarketing(siteTest3);
         
         ArrayList<Site> prioritised = saxonTest.getPrioritisedSites();
         
@@ -139,7 +143,6 @@ public class SaxonUnitTesting extends TestCase{
             j = j + 1;
         }
         assertEquals(j, 0);
-        
     }
     
 }
